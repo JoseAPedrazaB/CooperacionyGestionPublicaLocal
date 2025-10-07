@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Análisis Interactivo: Cooperación Internacional y Gestión Pública</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #4A4A4A;
+        }
+        .nav-link.active {
+            color: #D35400;
+            font-weight: 600;
+        }
+        .tab-btn.active {
+            border-color: #D35400;
+            color: #D35400;
+            background-color: #FEF5EE;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: white;
+            border: 4px solid #D35400;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-3">
+            <ul id="nav-menu" class="flex flex-wrap justify-center gap-x-4 md:gap-x-6 text-sm md:text-base">
+                <li><a href="#problema" class="nav-link p-2 transition-colors hover:text-[#D35400]">Problema</a></li>
+                <li><a href="#historia" class="nav-link p-2 transition-colors hover:text-[#D35400]">Historia</a></li>
+                <li><a href="#conceptos" class="nav-link p-2 transition-colors hover:text-[#D35400]">Conceptos</a></li>
+                <li><a href="#diseno" class="nav-link p-2 transition-colors hover:text-[#D35400]">Diseño</a></li>
+                <li><a href="#caso-estudio" class="nav-link p-2 transition-colors hover:text-[#D35400]">Caso de Estudio</a></li>
+                <li><a href="#resultados" class="nav-link p-2 transition-colors hover:text-[#D35400]">Resultados</a></li>
+                <li><a href="#conclusiones" class="nav-link p-2 transition-colors hover:text-[#D35400]">Conclusiones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+
+        <section id="problema" class="py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-[#2C3E50] leading-tight">La relación entre cooperación internacional y gestión pública.
+</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-[#7F8C8D]">¿Un asunto de capacidades o de gestión?</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto mt-12 space-y-12">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-center text-[#2C3E50] mb-4">El Dilema de la Cooperación Descentralizada</h2>
+                    <p class="text-center text-lg text-[#7F8C8D] max-w-3xl mx-auto">La cooperación internacional es una herramienta poderosa para el desarrollo, pero su implementación en Colombia es muy desigual.</p>
+                    <div class="mt-6 bg-yellow-100 border-l-4 border-yellow-400 text-yellow-800 p-6 rounded-r-lg">
+                        <h3 class="font-bold">La Paradoja</h3>
+                        <p>Mientras grandes ciudades como Medellín la aprovechan, la mayoría de los municipios pequeños, que más la necesitan, se quedan atrás.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-center text-[#2C3E50] mb-4">Pregunta Central de la Investigación</h2>
+                    <p class="text-center text-lg text-[#7F8C8D] max-w-3xl mx-auto">¿Por qué no se ha desarrollado a cabalidad una estructura de cooperación internacional en los gobiernos locales de Colombia, a pesar de conocer sus beneficios?</p>
+                    <div class="mt-6 text-center">
+                        <p class="text-sm font-semibold tracking-wider text-gray-500 uppercase">Hipótesis:</p>
+                        <p class="text-lg italic text-[#2C3E50] max-w-2xl mx-auto mt-2">El éxito depende de una compleja interacción entre capacidades institucionales, voluntad política y una gestión pública estratégica.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="py-16 bg-slate-50 rounded-lg">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Historia</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Un Poco de Historia: La Evolución de la Cooperación</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Modelo Tradicional -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-gray-300">
+                        <h3 class="text-xl font-bold text-[#2C3E50] mb-4">Modelo Tradicional (Post-Guerra)</h3>
+                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                            <li><span class="font-semibold">Vertical y Centralizado:</span> El poder residía en los Estados-Nación.</li>
+                            <li><span class="font-semibold">Ayuda Oficial (AOD):</span> Transferencia unidireccional de capital desde el "Norte" al "Sur".</li>
+                            <li><span class="font-semibold">Visión Geopolítica:</span> Usada como herramienta de influencia durante la Guerra Fría.</li>
+                        </ul>
+                    </div>
+                    <!-- Nuevo Paradigma -->
+                    <div class="bg-green-50 p-6 rounded-lg shadow-md border-t-4 border-green-400">
+                        <h3 class="text-xl font-bold text-green-800 mb-4">Nuevo Paradigma (Desde los 70s)</h3>
+                        <ul class="space-y-3 text-green-900 list-disc list-inside">
+                            <li><span class="font-semibold">Horizontal y Descentralizado:</span> Emergen nuevos actores.</li>
+                            <li><span class="font-semibold">Protagonismo Local:</span> Municipios y regiones se convierten en gestores de su propio desarrollo.</li>
+                            <li><span class="font-semibold">Enfoque Participativo:</span> Se valora la proximidad a las comunidades y sus necesidades reales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="actores" class="py-16">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Actores Clave y Dinámicas de la CID</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-[#7F8C8D]">El ecosistema de la CID es diverso, involucrando desde estados y organismos multilaterales hasta actores de la sociedad civil y gobiernos locales, cada uno con un rol específico.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8">
+                    <!-- Principales Donantes -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-full sm:w-2/3 md:w-2/5 lg:w-1/3 border-t-4 border-blue-400">
+                         <h3 class="text-xl font-bold text-center text-blue-800 mb-4">Principales Donantes (Países OCDE)</h3>
+                         <ul class="space-y-3 text-gray-700 list-disc list-inside text-left">
+                            <li>Agrupa a las economías más avanzadas (EE.UU., Alemania, Japón, etc.).</li>
+                            <li>El Comité de Ayuda al Desarrollo (CAD) establece las directrices.</li>
+                            <li>Colombia se unió en 2020, marcando una transición en su rol.</li>
+                         </ul>
+                    </div>
+                    <!-- Agencias Destacadas -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-full sm:w-2/3 md:w-2/5 lg:w-1/3 border-t-4 border-purple-400">
+                         <h3 class="text-xl font-bold text-center text-purple-800 mb-4">Agencias Destacadas</h3>
+                         <ul class="space-y-3 text-gray-700 list-disc list-inside text-left">
+                            <li>USAID (EE.UU.)</li>
+                            <li>GIZ (Alemania)</li>
+                            <li>JICA (Japón)</li>
+                            <li>AECID (España)</li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conceptos" class="py-16 bg-slate-50 rounded-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Conceptos</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Marcos teóricos para entender la acción exterior de los gobiernos no centrales.</p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto tabs-wrapper">
+                 <div class="flex flex-wrap justify-center border-b mb-6 space-x-2 md:space-x-4">
+                    <button data-tab="paradiplomacia" class="tab-btn active text-sm md:text-base font-semibold py-2 px-4 border-b-2 transition-colors">Paradiplomacia</button>
+                    <button data-tab="interdependencia" class="tab-btn text-sm md:text-base font-semibold py-2 px-4 border-b-2 border-transparent transition-colors">Interdependencia Compleja</button>
+                    <button data-tab="cooperacion" class="tab-btn text-sm md:text-base font-semibold py-2 px-4 border-b-2 border-transparent transition-colors">Cooperación Descentralizada</button>
+                </div>
+
+                <div>
+                    <div id="paradiplomacia" class="tab-content bg-white p-6 md:p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-[#D35400] mb-3">Paradiplomacia</h3>
+                        <p>Abarca todas las acciones internacionales que realiza un Gobierno No Central (GNC), sin importar su escala. Es el concepto más amplio y sirve como punto de partida.</p>
+                    </div>
+                    <div id="interdependencia" class="tab-content hidden bg-white p-6 md:p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-[#D35400] mb-3">Interdependencia Compleja</h3>
+                        <p>Supera la visión de que solo los Estados importan. Múltiples canales (sociales, económicos) conectan a las sociedades, y problemas como el cambio climático requieren la acción de todos, incluyendo los gobiernos locales.</p>
+                    </div>
+                    <div id="cooperacion" class="tab-content hidden bg-white p-8 rounded-lg shadow-xl">
+                        <h3 class="text-2xl md:text-3xl font-bold text-center text-[#2C3E50] mb-2">La Cooperación Descentralizada</h3>
+                        <p class="text-center text-[#7F8C8D] mb-10 max-w-3xl mx-auto">La CD ha ganado prominencia como un enfoque que busca mayor eficacia y pertinencia al involucrar directamente a los actores locales. Sus principios y formas de materializarse reflejan una evolución hacia modelos más participativos y adaptados a las realidades territoriales.</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <!-- Hitos -->
+                            <div>
+                                <h4 class="text-xl font-bold text-[#2C3E50] mb-6 text-center md:text-left">Hitos en el Desarrollo de la CD</h4>
+                                <div class="relative pl-8 border-l-2 border-gray-200">
+                                    <div class="timeline-item mb-10 relative">
+                                        <p class="font-semibold text-[#D35400]">1988-1992</p>
+                                        <p class="text-sm">Conferencias en Madrid, Bulawayo y Berlín impulsan la CD, enfatizando el rol de los gobiernos locales y la participación ciudadana.</p>
+                                    </div>
+                                    <div class="timeline-item mb-10 relative">
+                                        <p class="font-semibold text-[#D35400]">2005</p>
+                                        <p class="text-sm">Declaración de París: Principios de apropiación, alineación, armonización, gestión por resultados y responsabilidad mutua.</p>
+                                    </div>
+                                    <div class="timeline-item relative">
+                                        <p class="font-semibold text-[#D35400]">2008</p>
+                                        <p class="text-sm">Agenda de Acción de Accra: Refuerza la apropiación democrática, implicando a parlamentos, gobiernos subnacionales y sociedad civil.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Formas de Relacionamiento -->
+                            <div>
+                                <h4 class="text-xl font-bold text-[#2C3E50] mb-6 text-center md:text-left">Formas de Relacionamiento en la CD</h4>
+                                <div class="space-y-4">
+                                    <div class="p-4 rounded-lg bg-blue-100 border border-blue-200">
+                                        <p class="font-semibold text-blue-800">Hermanamientos (City-to-City)</p>
+                                        <p class="text-sm text-blue-700">Vínculos directos y a menudo a largo plazo entre ciudades para intercambio y colaboración.</p>
+                                    </div>
+                                    <div class="p-4 rounded-lg bg-green-100 border border-green-200">
+                                        <p class="font-semibold text-green-800">Redes de Ciudades</p>
+                                        <p class="text-sm text-green-700">Estructuras multilaterales para el intercambio de conocimientos, incidencia política y proyectos conjuntos (Ej. CGLU, Eurocities).</p>
+                                    </div>
+                                    <div class="p-4 rounded-lg bg-purple-100 border border-purple-200">
+                                        <p class="font-semibold text-purple-800">Proyectos Específicos</p>
+                                        <p class="text-sm text-purple-700">Colaboraciones puntuales (bilaterales o multilaterales) para abordar necesidades concretas, a menudo financiados por organismos internacionales o programas como URB-AL.</p>
+                                    </div>
+                                     <div class="p-4 rounded-lg bg-orange-100 border border-orange-200">
+                                        <p class="font-semibold text-orange-800">Cooperación Transfronteriza</p>
+                                        <p class="text-sm text-orange-700">Colaboración entre poblaciones vecinas con frontera común.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profundizacion-cd" class="py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Profundizando: ¿Qué es la Cooperación Descentralizada (CD)?</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-[#7F8C8D]">Es un enfoque que empodera a los actores locales para que sean protagonistas de su propio desarrollo, estableciendo relaciones directas a nivel internacional.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Características Clave -->
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Características Clave</h3>
+                        <ul class="space-y-3 text-gray-700 list-disc list-inside">
+                            <li><span class="font-semibold">Proximidad:</span> Conecta directamente con las necesidades de la comunidad.</li>
+                            <li><span class="font-semibold">Desarrollo Endógeno:</span> Fomenta soluciones desde lo local.</li>
+                            <li><span class="font-semibold">Democracia Participativa:</span> Involucra a la población en las iniciativas.</li>
+                        </ul>
+                    </div>
+                    <!-- Cooperación Oficial Descentralizada -->
+                    <div class="bg-blue-50 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold text-blue-800 mb-4">Cooperación Oficial Descentralizada (COD)</h3>
+                        <p class="text-gray-700">Es la que realizan específicamente los gobiernos locales (municipios, departamentos). Es una manifestación de la <strong>Paradiplomacia</strong>, donde la gestión local trasciende las fronteras.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="diseno" class="py-16 bg-slate-50 rounded-lg">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Diseño de la Investigación</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Metodología y enfoque adoptados para analizar la relación entre las capacidades institucionales y la gestión de la cooperación internacional.</p>
+                </div>
+
+                <div class="tabs-wrapper">
+                    <div class="flex flex-wrap justify-center border-b mb-8 space-x-1 md:space-x-3">
+                        <button data-tab="diseno-muestreo" class="tab-btn active text-xs md:text-sm font-semibold py-2 px-3 transition-colors">Diseño y Muestreo</button>
+                        <button data-tab="recoleccion" class="tab-btn text-xs md:text-sm font-semibold py-2 px-3 transition-colors border-b-2 border-transparent">Recolección de Datos</button>
+                        <button data-tab="validacion" class="tab-btn text-xs md:text-sm font-semibold py-2 px-3 transition-colors border-b-2 border-transparent">Validación</button>
+                        <button data-tab="analisis" class="tab-btn text-xs md:text-sm font-semibold py-2 px-3 transition-colors border-b-2 border-transparent">Análisis y Herramientas</button>
+                        <button data-tab="matriz-entrevistas" class="tab-btn text-xs md:text-sm font-semibold py-2 px-3 transition-colors border-b-2 border-transparent">Matriz Entrevistas</button>
+                        <button data-tab="matriz-planes" class="tab-btn text-xs md:text-sm font-semibold py-2 px-3 transition-colors border-b-2 border-transparent">Matriz Planes</button>
+                    </div>
+
+                    <div>
+                        <div id="diseno-muestreo" class="tab-content">
+                             <div class="text-center mb-8">
+                                <h3 class="text-2xl font-bold text-[#2C3E50]">Diseño de la Investigación y Muestreo</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">Enfoque Mixto</h4>
+                                    <p>Se combina el análisis cualitativo (entrevistas) y cuantitativo (estadísticas) para obtener una visión completa, con un alcance exploratorio y explicativo.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">Universo y Muestra</h4>
+                                    <p>De los 125 municipios de Antioquia, se seleccionó una muestra representativa de <span class="font-bold">47 municipios</span> para el estudio profundo.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">Muestreo Estratificado</h4>
+                                    <p>La muestra se seleccionó dividiendo los municipios por su categoría oficial, asegurando la representación de la diversidad territorial (90% de confianza).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="recoleccion" class="tab-content hidden">
+                            <div class="text-center mb-8">
+                                <h3 class="text-2xl font-bold text-[#2C3E50]">Recolección de Datos (Triangulación)</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">1. Entrevistas Semiestructuradas</h4>
+                                    <p>Diálogos con alcaldes y funcionarios clave para entender sus percepciones, capacidades y prácticas de gestión.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">2. Análisis Documental</h4>
+                                    <p>Revisión de los Planes de Desarrollo Municipal (2020-2023) para identificar la priorización política de la cooperación.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">3. Datos Secundarios</h4>
+                                    <p>Información oficial (DANE, Contaduría) para contextualizar y complementar los hallazgos primarios.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="validacion" class="tab-content hidden">
+                            <div class="text-center mb-8">
+                                <h3 class="text-2xl font-bold text-[#2C3E50]">Validación y Rigor Metodológico</h3>
+                                <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Para garantizar la calidad y fiabilidad de los datos, el instrumento de entrevista fue sometido a un riguroso proceso de validación.</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">Juicio de Expertos</h4>
+                                    <p>El cuestionario fue evaluado por <strong>tres expertos académicos</strong> en la materia para asegurar su pertinencia y claridad.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md">
+                                    <h4 class="font-bold text-lg mb-2 text-[#D35400]">Resultado Cuantitativo</h4>
+                                    <p>Se alcanzó un <strong>Coeficiente de Validez de Contenido (CVC) de 0.87</strong>, considerado como "bueno" y estadísticamente sólido.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="analisis" class="tab-content hidden">
+                            <div class="text-center mb-8">
+                                <h3 class="text-2xl font-bold text-[#2C3E50]">Análisis de Datos y Herramientas Tecnológicas</h3>
+                                <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Se utilizaron herramientas especializadas para un análisis robusto y profundo.</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                                    <h4 class="font-bold text-lg mb-2 text-purple-800">Análisis Cualitativo (NVivo)</h4>
+                                    <p>Las transcripciones de entrevistas y los planes de desarrollo fueron procesados para identificar patrones temáticos, categorías y narrativas subyacentes.</p>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
+                                    <h4 class="font-bold text-lg mb-2 text-teal-800">Análisis Cuantitativo (RStudio)</h4>
+                                    <p>Se aplicó un <strong>Análisis de Correspondencias Múltiples (ACM)</strong> para visualizar las relaciones entre variables (categoría, conocimiento, etc.) y agrupar a los municipios en clústeres según sus perfiles.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="matriz-entrevistas" class="tab-content hidden">
+                            <div class="text-center mb-10">
+                                <h3 class="text-2xl font-bold text-[#2C3E50]">Matriz de Codificación de Entrevistas</h3>
+                            </div>
+                            <div class="flex justify-center p-4">
+                                <img src="https://i.ibb.co/L5B7w05/imagen.png" alt="Matriz de codificación de entrevistas" class="max-w-full h-auto rounded-lg shadow-xl border">
+                            </div>
+                        </div>
+                        <div id="matriz-planes" class="tab-content hidden">
+                           <div class="text-center mb-10">
+                                <h3 class="text-2xl font-bold text-[#2C3E50]">Matriz de Codificación para Planes de Desarrollo</h3>
+                            </div>
+                            <div class="flex justify-center p-4">
+                                <img src="https://i.ibb.co/6gqgqYc/imagen.png" alt="Matriz de Codificación para Planes de Desarrollo" class="max-w-full h-auto rounded-lg shadow-xl border">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="caso-estudio" class="py-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Caso de Estudio</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Análisis en profundidad de un Gobierno No Central para ilustrar los conceptos y desafíos en la práctica.</p>
+                </div>
+                 <div class="prose max-w-none text-justify">
+                    <!-- Placeholder content -->
+                    <p>Se analiza el caso del Municipio X, una ciudad intermedia que, a pesar de contar con recursos financieros limitados, ha logrado implementar una exitosa agenda de cooperación descentralizada. Se examina cómo la creación de una pequeña pero especializada unidad de relaciones internacionales, el fuerte liderazgo político y la focalización en nichos temáticos (ej. gestión de residuos sólidos) le permitieron atraer socios y financiación para proyectos de desarrollo local clave.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultados" class="py-16 bg-slate-50 rounded-lg">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Resultados</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-[#7F8C8D]">Principales hallazgos derivados del análisis de los casos de estudio y la investigación documental.</p>
+                </div>
+                 <div class="prose max-w-none text-justify">
+                    <!-- Placeholder content -->
+                    <p>El estudio revela que, si bien las capacidades institucionales (presupuesto, personal) son importantes, el factor determinante es la calidad de la gestión. GNCs con una gestión estratégica, que alinea la acción exterior con las prioridades locales y mide el impacto de sus iniciativas, obtienen mejores resultados que aquellos con mayores recursos pero sin una dirección clara. La proactividad, la especialización y la construcción de confianza con socios internacionales emergen como variables críticas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusiones" class="py-16 text-center">
+             <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Conclusiones</h2>
+             <p class="mt-4 text-lg max-w-3xl mx-auto text-[#7F8C8D]">Sintetizando los hallazgos: la cooperación internacional es, fundamentalmente, un desafío de buena gestión más que una simple cuestión de tener capacidades preexistentes.</p>
+             <div class="mt-8 border-t-2 border-[#D35400] w-24 mx-auto"></div>
+             <p class="mt-8 max-w-3xl mx-auto text-[#2C3E50] font-semibold">Para los GNC, la clave no reside en replicar las estructuras de la diplomacia tradicional, sino en desarrollar modelos de gestión ágiles y estratégicos que les permitan identificar y aprovechar oportunidades en el sistema internacional para potenciar su desarrollo local. La inversión en formación de gestores públicos en esta área es más rentable que la creación de grandes burocracias.</p>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Navigation scroll highlighting
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if(link.getAttribute('href') && entry.target.id) {
+                                if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                    link.classList.add('active');
+                                }
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            sections.forEach(section => observer.observe(section));
+
+            // Tabs functionality
+            const allTabWrappers = document.querySelectorAll('.tabs-wrapper');
+
+            allTabWrappers.forEach(wrapper => {
+                const tabButtons = wrapper.querySelectorAll('.tab-btn');
+                const tabContents = wrapper.querySelectorAll('.tab-content');
+
+                if (tabButtons.length > 0) {
+                    tabButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const tabId = button.dataset.tab;
+
+                            tabButtons.forEach(btn => btn.classList.remove('active'));
+                            button.classList.add('active');
+
+                            tabContents.forEach(content => {
+                                if (!content.id.startsWith(tabId)) {
+                                    content.classList.add('hidden');
+                                }
+                                if (content.id === tabId) {
+                                    content.classList.remove('hidden');
+                                }
+                            });
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
